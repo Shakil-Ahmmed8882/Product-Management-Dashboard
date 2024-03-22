@@ -9,7 +9,7 @@ const tagsArray = [
 export const FilterTags = ({activeTab,handleClick}) => {
   return (
     <>
-    {/* hello */}
+    
       <div className={`${!activeTab?'translate-y-0 z-20 visible opacity-100':'-translate-y-16 opacity-0 invisible'}
        transition-all duration-200 absolute top-32 md:right-1/4 w-full sm:w-[90%] md:w-[480px] md:h-[460px] bg-white rounded-lg shadow-lg p-3 py-6 `}>
         <div className="flex flex-col space-y-4">
