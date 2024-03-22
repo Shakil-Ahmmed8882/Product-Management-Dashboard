@@ -12,7 +12,13 @@ const Home = () => {
       <Container>
       <TitleAndDescription position={""}/>
       </Container>
-    </div>
+
+
+
+
+
+</div>
+
   )
 }
 

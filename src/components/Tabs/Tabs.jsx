@@ -1,31 +1,48 @@
-// import local file for single shared style 
+// import local file for single shared style
+import { useState } from "react";
 import { Tab } from "./Tab";
 
-export default function Tabs() {
+export default function Tabs({ handleClick }) {
+  const [openTabMenu, setOpenTabMenu] = useState(false);
+
   return (
-    <div className=" py-5 flex items-center justify-between px-4 bg-white border-r border-l border-gray-200">
-
-{/* // Outer container for the tabs */}
-      <div className="flex gap-2 space-x-2">
-       <Tab icon={LayoutGridIcon} label={"All brands"}/>
-       <Tab icon={ComputerIcon} label={"Desk"}/>
-       <Tab icon={TagIcon} label={"Tags"}/>
-       <Tab icon={ListOrderedIcon} label={"Sort"}/>
-       <Tab icon={FilterIcon} label={"Filter"}/>
-
+    <div className=" relative py-5 flex items-center justify-between px-4 bg-white border-r border-l border-gray-200">
+      {/* // Outer container for the tabs */}
+      <div
+        className={` ${
+          openTabMenu ? " absolute md:static top-16 z-10" : "hidden md:flex"
+        } shadow-lg md:shadow-none bg-[#ffffff] w-[100%] sm:w-[300px] md:w-full p-8 rounded flex-col flex  md:flex-row gap-2 space-x-2`}
+      >
+        <Tab
+          handleClick={handleClick}
+          icon={LayoutGridIcon}
+          label={"All brands"}
+        />
+        <Tab handleClick={handleClick} icon={ComputerIcon} label={"Desk"} />
+        <Tab handleClick={handleClick} icon={TagIcon} label={"Tags"} />
+        <Tab handleClick={handleClick} icon={ListOrderedIcon} label={"Sort"} />
+        <Tab handleClick={handleClick} icon={FilterIcon} label={"Filter"} />
+      </div>
+      <div
+        onClick={() => setOpenTabMenu(!openTabMenu)}
+        className="h-7 w-7  top-4 md:hidden rounded cursor-pointer bg-primary-color flex flex-col justify-center items-center"
+      >
+        <p className="h-1 w-full bg-white m-1"></p>
+        <p className="h-1 w-full bg-white m-1"></p>
       </div>
       <div className="flex space-x-2">
-       <Tab icon={CalendarIcon} label={"Meeting"}/>
-       <Tab icon={UploadIcon} label={"Import/Export"}/>
-        
+        <Tab handleClick={handleClick} icon={CalendarIcon} label={"Meeting"} />
+        <Tab
+          handleClick={handleClick}
+          icon={UploadIcon}
+          label={"Import/Export"}
+        />
       </div>
     </div>
   );
 }
 
-
-
-// All SVG icons for different tabs 
+// All SVG icons for different tabs
 function CalendarIcon(props) {
   return (
     <svg
@@ -47,7 +64,6 @@ function CalendarIcon(props) {
     </svg>
   );
 }
-
 
 // Desktop icon
 function ComputerIcon(props) {
@@ -71,7 +87,6 @@ function ComputerIcon(props) {
     </svg>
   );
 }
-
 
 function FilterIcon(props) {
   return (

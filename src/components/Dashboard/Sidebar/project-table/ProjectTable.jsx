@@ -2,6 +2,8 @@ import { TableBody } from "./TableBody/TableBody";
 import { TableHeading } from "./TableHeading";
 
 export const ProjectTable = () => {
+
+
   return (
     <>
       <div className="relative w-full overflow-auto">

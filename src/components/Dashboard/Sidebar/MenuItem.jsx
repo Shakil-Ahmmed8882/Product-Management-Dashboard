@@ -8,8 +8,8 @@ const MenuItem = ({ label, address, icon: Icon }) => {
     <NavLink
       to={address}
       end
-      className={`flex items-center px-4 py-2 my-5 transition-colors duration-300 transform border-b border-b-[#d2d2d2] hover:bg-[#efefef] ${
-        isActive ? "font-bold text-black shadow-md" : "text-gray-700 bg-[white]"
+      className={`flex items-center px-4 py-2  my-5 transition-colors duration-300 transform border-b border-b-[#d2d2d2] hover:bg-[#efefef] ${
+        isActive ? "font-bold text-black" : "text-gray-700 bg-[white]"
       }`}
     >
       <li className="flex items-center px-4 py-2">
@@ -20,7 +20,7 @@ const MenuItem = ({ label, address, icon: Icon }) => {
             } text-[11px]`}
           />
         ) : (
-          <span className="bg-[#764CFF] w-2 h-2 rounded-full"></span>
+          <span className="bg-primary-color w-2 h-2 rounded-full"></span>
         )}
         <span className="ml-2 text-sm">{label}</span>
       </li>

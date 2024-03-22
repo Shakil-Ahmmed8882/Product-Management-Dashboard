@@ -5,10 +5,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        "primary-color": "#4ADE80",
+        "primary-color": "#764CFF",
         "primary-bg": "#FCFFFC",
         "description-text": "#666666",
-        "hover-bg": "#4ADE80",
+        "hover-bg": "#5e2eff",
         "hover-text": "white",
       },
       // fonts
