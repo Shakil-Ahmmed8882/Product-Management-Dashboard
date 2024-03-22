@@ -3,7 +3,13 @@ import { FcSettings } from "react-icons/fc";
 import { useState } from "react";
 import Logo from "../../../Shared/Logo";
 import { SidebarItem } from "./SidebarItem";
-import { designsItems, legalItems, officeItems, productsItems, salesItems } from "./sidebarDropdownItems";
+import {
+  designsItems,
+  legalItems,
+  officeItems,
+  productsItems,
+  salesItems,
+} from "./sidebarDropdownItems";
 import MenuItem from "../MenuItem";
 
 export const MySidebar = () => {
@@ -20,7 +26,7 @@ export const MySidebar = () => {
         z-10 md:fixed flex-col
         justify-between 
         overflow-x-hidden
-        w-64
+        w-72
         bg-[white]
         space-y-6
         px-2 py-4
@@ -31,12 +37,17 @@ export const MySidebar = () => {
         ease-in-out`}
       >
         <div>
-          <div>
-            <div className="w-full flex  gap-3 items-center px-4 py-2">
+          <div className="flex">
+            <div className="w-full flex justify-between  gap-3 items-end px-4 py-2">
               <Logo />
               <div>
                 <p className="text-[#a7a7a7]">inc</p>
                 <h3 className="font-semibold font-">InnovativeHub</h3>
+              </div>
+              <div>
+                <p className="w-7 h-7 flex justify-center items-center rounded-full bg-primary-color z-10 ">
+                  <img className=" w-6 h-6 rounded-full object-cover" src="https://images.pexels.com/photos/1559486/pexels-photo-1559486.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
+                </p>
               </div>
             </div>
           </div>
@@ -45,14 +56,27 @@ export const MySidebar = () => {
         <div>
           <hr />
           <ul>
-
-
             {/* <MenuItem address={"/desing-team"} icon={BriefcaseIcon} label={"Design Team"}/> */}
-            <MenuItem address={"/"} icon={BriefcaseIcon} label={"Design Team"}/>
-            <MenuItem address={"/marketing-design"} icon={MegaphoneIcon} label={"Marketing Design"}/>
-            <MenuItem address={"/development-team"} icon={CogIcon} label={"Development Team"}/>
-            <MenuItem address={"/create-team"} icon={PlusIcon} label={"Create A Team"}/>
-
+            <MenuItem
+              address={"/"}
+              icon={BriefcaseIcon}
+              label={"Design Team"}
+            />
+            <MenuItem
+              address={"/marketing-design"}
+              icon={MegaphoneIcon}
+              label={"Marketing Design"}
+            />
+            <MenuItem
+              address={"/development-team"}
+              icon={CogIcon}
+              label={"Development Team"}
+            />
+            <MenuItem
+              address={"/create-team"}
+              icon={PlusIcon}
+              label={"Create A Team"}
+            />
           </ul>
           <div className="mt-6 mb-2 px-4 font-semibold text-md">FOLDERS</div>
           <ul>
@@ -75,7 +99,6 @@ export const MySidebar = () => {
               sidebarDropdowns={officeItems}
             />
 
-            
             {/* Office */}
             <SidebarItem
               handleClick={setIsOpenLegalDropdown}
@@ -86,7 +109,6 @@ export const MySidebar = () => {
               sidebarDropdowns={legalItems}
             />
 
-            
             {/* Sales */}
             <SidebarItem
               handleClick={setIsOpenSalesDropdown}
@@ -99,20 +121,15 @@ export const MySidebar = () => {
           </ul>
         </div>
 
-       
-
-
-            {/* Products */}
-            <SidebarItem
-              handleClick={setIsOpenProductsDropdown}
-              FirstIcon={FolderIcon}
-              SecondIcon={ChevronDownIcon}
-              label={"Products"}
-              isOpen={isOpenProductsDropdown}
-              sidebarDropdowns={productsItems}
-            />
-       
-       
+        {/* Products */}
+        <SidebarItem
+          handleClick={setIsOpenProductsDropdown}
+          FirstIcon={FolderIcon}
+          SecondIcon={ChevronDownIcon}
+          label={"Products"}
+          isOpen={isOpenProductsDropdown}
+          sidebarDropdowns={productsItems}
+        />
       </div>
     </>
   );

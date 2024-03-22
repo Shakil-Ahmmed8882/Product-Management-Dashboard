@@ -1,3 +1,4 @@
+import { ActionButtons } from "./ActionButtons/ActionButtons";
 import { TableBody } from "./TableBody/TableBody";
 import { TableHeading } from "./TableHeading";
 
@@ -11,6 +12,10 @@ export const ProjectTable = () => {
           <TableHeading/>
           <TableBody/>
         </table>
+
+
+
+        <ActionButtons/>
       </div>
     </>
   );
