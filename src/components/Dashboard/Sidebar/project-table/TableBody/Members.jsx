@@ -8,7 +8,7 @@ export const Members = ({members}) => {
           {
             members?.map(member => (
                 <img key={member} src={member} className="relative justify-center
-                 bg-[#EAEAEA] flex h-10 w-10 shrink-0 overflow-hidden rounded-full"/>
+                 bg-[#EAEAEA] flex h-6 w-6 shrink-0 overflow-hidden rounded-full"/>
             ))
           }
         </div>

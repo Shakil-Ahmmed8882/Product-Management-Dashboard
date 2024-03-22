@@ -3,7 +3,7 @@ import MenuItem from "../MenuItem";
 export const SidebarItem = ({handleClick,FirstIcon,SecondIcon,label,isOpen,sidebarDropdowns}) => {
   return (
     <>
-      <li onClick={()=> handleClick(!isOpen)} className={`${isOpen?"font-bold":""}   transition-all duration-100 flex cursor-pointer px-4 py-2 mt-3 items-center`}>
+      <li onClick={()=> handleClick(!isOpen)} className={`${isOpen?"font-semibold text-[#3b3b3b]":""}   transition-all duration-100 flex cursor-pointer px-4 py-2 mt-3 items-center`}>
 
         <FirstIcon className="text-gray-400"/>
 

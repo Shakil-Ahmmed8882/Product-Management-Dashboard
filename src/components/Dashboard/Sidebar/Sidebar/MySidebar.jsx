@@ -35,8 +35,8 @@ export const MySidebar = () => {
             <div className="w-full flex  gap-3 items-center px-4 py-2">
               <Logo />
               <div>
-                <p>INC</p>
-                <h3 className="font-bold">InnovativeHub</h3>
+                <p className="text-[#a7a7a7]">inc</p>
+                <h3 className="font-semibold font-">InnovativeHub</h3>
               </div>
             </div>
           </div>
@@ -54,7 +54,7 @@ export const MySidebar = () => {
             <MenuItem address={"/create-team"} icon={PlusIcon} label={"Create A Team"}/>
 
           </ul>
-          <div className="mt-6 mb-2 px-4 font-semibold text-sm">FOLDERS</div>
+          <div className="mt-6 mb-2 px-4 font-semibold text-md">FOLDERS</div>
           <ul>
             {/* Designs */}
             <SidebarItem
@@ -125,8 +125,8 @@ function BriefcaseIcon(props) {
     <svg
       {...props}
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
+      width="20"
+      height="20"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
@@ -145,8 +145,8 @@ function BuildingIcon(props) {
     <svg
       {...props}
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
+      width="20"
+      height="20"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
@@ -174,8 +174,8 @@ function ChevronDownIcon(props) {
     <svg
       {...props}
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
+      width="20"
+      height="20"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
@@ -193,8 +193,8 @@ function CogIcon(props) {
     <svg
       {...props}
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
+      width="20"
+      height="20"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
@@ -225,8 +225,8 @@ function FolderIcon(props) {
     <svg
       {...props}
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
+      width="20"
+      height="20"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
@@ -244,8 +244,8 @@ function MegaphoneIcon(props) {
     <svg
       {...props}
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
+      width="20"
+      height="20"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
@@ -264,8 +264,8 @@ function PencilIcon(props) {
     <svg
       {...props}
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
+      width="20"
+      height="20"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
@@ -284,8 +284,8 @@ function PlusIcon(props) {
     <svg
       {...props}
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
+      width="20"
+      height="20"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
@@ -304,8 +304,8 @@ function ScaleIcon(props) {
     <svg
       {...props}
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
+      width="20"
+      height="20"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
@@ -327,8 +327,8 @@ function TagIcon(props) {
     <svg
       {...props}
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
+      width="20"
+      height="20"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"

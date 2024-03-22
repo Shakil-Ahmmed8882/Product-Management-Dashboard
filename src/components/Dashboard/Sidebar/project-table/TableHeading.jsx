@@ -1,4 +1,5 @@
 export const TableHeading = () => {
+
   return (
     <>
       <thead className="[&_tr]:border-b">
