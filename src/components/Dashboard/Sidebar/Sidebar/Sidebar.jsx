@@ -1,5 +1,5 @@
 // Components
-import Logo from "../../Shared/Logo";
+import Logo from "../../../Shared/Logo";
 // Icons
 
 import { AiOutlineMenu } from "react-icons/ai";

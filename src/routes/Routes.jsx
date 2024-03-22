@@ -12,7 +12,7 @@ import { Dashboard } from "../pages/Dashboard/Dashboard";
 
 export const router = createBrowserRouter([
   {
-    path: "/dashboard",
+    path: "/",
     errorElement: <ErrorPage />,
     element: (
       <DashboardLayout />
