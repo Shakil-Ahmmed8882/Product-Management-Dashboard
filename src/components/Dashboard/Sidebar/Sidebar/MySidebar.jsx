@@ -1,21 +1,17 @@
-
-
 import { FcSettings } from "react-icons/fc";
 
 import { useState } from "react";
 import Logo from "../../../Shared/Logo";
 import { SidebarItem } from "./SidebarItem";
+import { designsItems, legalItems, officeItems, productsItems, salesItems } from "./sidebarDropdownItems";
+import MenuItem from "../MenuItem";
 
 export const MySidebar = () => {
-
-const [isOpenProductsDropdown,setIsOpenProductsDropdown] = useState(false)
-const [isOpenSalesDropdown,setIsOpenSalesDropdown] = useState(false)
-const [isOpenDesignsDropdown,setIsOpenDesignsDropdown] = useState(false)
-const [isOpenOfficeDropdown,setIsOpenOfficeDropdown] = useState(false)
-const [isOpenLegalDropdown,setIsOpenLegalDropdown] = useState(false)
-
-
-
+  const [isOpenProductsDropdown, setIsOpenProductsDropdown] = useState(false);
+  const [isOpenSalesDropdown, setIsOpenSalesDropdown] = useState(false);
+  const [isOpenDesignsDropdown, setIsOpenDesignsDropdown] = useState(false);
+  const [isOpenOfficeDropdown, setIsOpenOfficeDropdown] = useState(false);
+  const [isOpenLegalDropdown, setIsOpenLegalDropdown] = useState(false);
 
   return (
     <>
@@ -24,8 +20,8 @@ const [isOpenLegalDropdown,setIsOpenLegalDropdown] = useState(false)
         z-10 md:fixed flex-col
         justify-between 
         overflow-x-hidden
-      bg-gray-50 
         w-64
+        bg-[white]
         space-y-6
         px-2 py-4
         absolute inset-y-0
@@ -49,62 +45,74 @@ const [isOpenLegalDropdown,setIsOpenLegalDropdown] = useState(false)
         <div>
           <hr />
           <ul>
-            <li className="flex font-bold items-center px-4 py-2">
-              <BriefcaseIcon className="font-bold text-gray-400" />
-              <span className="ml-2 text-sm">Design team</span>
-            </li>
-            <li className="flex font-bold items-center px-4 py-2">
-              <MegaphoneIcon className="font-bold text-gray-400" />
-              <span className="ml-2 text-sm">Marketing Team</span>
-            </li>
-            <li className="flex font-bold items-center px-4 py-2">
-              <CogIcon className="text-gray-font-bold 400" />
-              <span className="ml-2 text-sm">Development Team</span>
-              <div className="ml-auto" variant="secondary"></div>
-            </li>
-            <li className="flex font-bold items-center px-4 py-2">
-              <PlusIcon className="text-gray-font-bold 400" />
-              <span className="ml-2 text-sm">Create a team</span>
-            </li>
-          </ul>
-          <div className="mt-4 px-4 font-semibold text-sm">FOLDERS</div>
-          <ul>
-           
-            <SidebarItem 
-            FirstIcon={PencilIcon}
-            SecondIcon={ChevronDownIcon} 
-            label={"Design"}
-            isOpen={isOpenDesignsDropdown}/>
 
-            <li onClick={()=> setIsOpenOfficeDropdown(!isOpenOfficeDropdown)} className="flex items-center px-4 py-2">
-              <BuildingIcon className="text-gray-400" />
-              <span className="ml-2 text-sm">Office</span>
-              <ChevronDownIcon className={`${isOpenOfficeDropdown&&"rotate-180"} transition-all duration-200 text-gray-400 ml-auto`}/>
-            </li>
-            <li onClick={()=> setIsOpenLegalDropdown(!isOpenLegalDropdown)} className="cursor-pointer flex items-center px-4 py-2">
-              <ScaleIcon className="text-gray-400" />
-              <span className="ml-2 text-sm">Legal</span>
-              <ChevronDownIcon className={`${isOpenLegalDropdown&&"rotate-180"} transition-all duration-200 text-gray-400 ml-auto`}/>
-            </li>
+
+            {/* <MenuItem address={"/desing-team"} icon={BriefcaseIcon} label={"Design Team"}/> */}
+            <MenuItem address={"/"} icon={BriefcaseIcon} label={"Design Team"}/>
+            <MenuItem address={"/marketing-design"} icon={MegaphoneIcon} label={"Marketing Design"}/>
+            <MenuItem address={"/development-team"} icon={CogIcon} label={"Development Team"}/>
+            <MenuItem address={"/create-team"} icon={PlusIcon} label={"Create A Team"}/>
+
+          </ul>
+          <div className="mt-6 mb-2 px-4 font-semibold text-sm">FOLDERS</div>
+          <ul>
+            {/* Designs */}
+            <SidebarItem
+              handleClick={setIsOpenDesignsDropdown}
+              FirstIcon={PencilIcon}
+              SecondIcon={ChevronDownIcon}
+              label={"Design"}
+              isOpen={isOpenDesignsDropdown}
+              sidebarDropdowns={designsItems}
+            />
+            {/* Office */}
+            <SidebarItem
+              handleClick={setIsOpenOfficeDropdown}
+              FirstIcon={BuildingIcon}
+              SecondIcon={ChevronDownIcon}
+              label={"Office"}
+              isOpen={isOpenOfficeDropdown}
+              sidebarDropdowns={officeItems}
+            />
+
+            
+            {/* Office */}
+            <SidebarItem
+              handleClick={setIsOpenLegalDropdown}
+              FirstIcon={ScaleIcon}
+              SecondIcon={ChevronDownIcon}
+              label={"Legal"}
+              isOpen={isOpenLegalDropdown}
+              sidebarDropdowns={legalItems}
+            />
+
+            
+            {/* Sales */}
+            <SidebarItem
+              handleClick={setIsOpenSalesDropdown}
+              FirstIcon={TagIcon}
+              SecondIcon={ChevronDownIcon}
+              label={"Sales"}
+              isOpen={isOpenSalesDropdown}
+              sidebarDropdowns={salesItems}
+            />
           </ul>
         </div>
 
-        <li onClick={()=> setIsOpenProductsDropdown(!isOpenProductsDropdown)} className="flex items-center cursor-pointer px-4 py-2">
-              <FolderIcon className="text-gray-400" />
-              <span className="ml-2 text-sm">Products</span>
-              <ChevronDownIcon className={`${isOpenProductsDropdown&&"rotate-180"} transition-all duration-200 text-gray-400 ml-auto`} />
-            </li>
-            <ul className={`dropdown ${isOpenProductsDropdown ? 'opacity-100 block' : 'hidden opacity-0'} transition-all duration-150 relative ml-4 ${isOpenProductsDropdown ? 'top-0 translate-y-0' : '-translate-y-10'}`}>
-              <li className=" cursor-pointer px-4 py-2 text-sm">Roadmap</li>
-              <li className=" cursor-pointer px-4 py-2 text-sm">Feedback</li>
-              <li className=" cursor-pointer px-4 py-2 text-sm">Performance</li>
-              <li className=" cursor-pointer px-4 py-2 text-sm">Team</li>
-              <li className=" cursor-pointer px-4 py-2 text-sm">Analytics</li>
-              <li className=" cursor-pointer flex items-center px-4 py-2">
-                <PlusIcon className="text-gray-400" />
-                <span className="ml-2 text-sm">Add new sub</span>
-              </li>
-            </ul>
+       
+
+
+            {/* Products */}
+            <SidebarItem
+              handleClick={setIsOpenProductsDropdown}
+              FirstIcon={FolderIcon}
+              SecondIcon={ChevronDownIcon}
+              label={"Products"}
+              isOpen={isOpenProductsDropdown}
+              sidebarDropdowns={productsItems}
+            />
+       
+       
       </div>
     </>
   );

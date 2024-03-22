@@ -12,7 +12,7 @@ const Sidebar = () => {
   return (
     <>
       {/* Small Screen Navbar */}
-      <div className="bg-gray-100 text-gray-800 flex justify-between   px-3 p-2 md:hidden">
+      <div className=" text-gray-800 flex justify-between   px-3 p-2 md:hidden">
         <Logo />
         <AiOutlineMenu
           onClick={() => setIsOpenSidebar(!isOpenSideBar)}

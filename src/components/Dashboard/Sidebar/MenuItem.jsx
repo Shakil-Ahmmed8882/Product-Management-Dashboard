@@ -1,21 +1,31 @@
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation } from "react-router-dom";
 
 const MenuItem = ({ label, address, icon: Icon }) => {
+  const location = useLocation();
+  const isActive = location.pathname === address;
+
   return (
     <NavLink
       to={address}
       end
-      className={({ isActive }) =>
-        `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
-          isActive ? 'bg-gray-300  text-gray-700' : 'text-gray-600'
-        }`
-      }
+      className={`flex items-center px-4 py-2 my-5 transition-colors duration-300 transform border-b border-b-[#d2d2d2] hover:bg-[#efefef] ${
+        isActive ? "font-bold text-black shadow-md" : "text-gray-700 bg-[white]"
+      }`}
     >
-      <Icon className='w-5 h-5' />
-
-      <span className='mx-4 font-medium'>{label}</span>
+      <li className="flex items-center px-4 py-2">
+        {Icon ? (
+          <Icon
+            className={`font-bold ${
+              isActive ? "font-bold text-black" : "text-gray-400"
+            } text-[11px]`}
+          />
+        ) : (
+          <span className="bg-[#764CFF] w-2 h-2 rounded-full"></span>
+        )}
+        <span className="ml-2 text-sm">{label}</span>
+      </li>
     </NavLink>
-  )
-}
+  );
+};
 
-export default MenuItem
+export default MenuItem;
